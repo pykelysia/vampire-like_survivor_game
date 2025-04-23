@@ -18,9 +18,27 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="m_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common_def.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="m_test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
