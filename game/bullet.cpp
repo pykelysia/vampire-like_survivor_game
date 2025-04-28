@@ -11,7 +11,7 @@ void UpdataBulletPosition(std::vector<Bullet*> bulletList, const Player& player)
 	int deltaAngle = 360 / (1.0 * bulletList.size());
 	POINT playerPosition = player.GetPosition();
 	//
-	angle = (angle + 2) % fullAngle;
+	angle = (angle + 5) % fullAngle;
 	int counter = 0;
 	for (auto bullet : bulletList) {
 		double positionAngle = (1.0 * angle + counter * deltaAngle) / fullAngle;

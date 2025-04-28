@@ -1,10 +1,6 @@
 #ifndef _M_TEST_H_
 #define _M_TEST_H_
 
-#include<graphics.h>
-#include<math.h>
-#include <vector>
-
 #include "common_def.h"
 #include "monster.h"
 #include "player.h"
@@ -20,10 +16,7 @@ public:
 			Down,
 			Right
 		};
-		//
-
 		SpawnEdge edge = (SpawnEdge)(rand() % 4);
-
 		switch (edge)
 		{
 		case SpawnEdge::Up:
@@ -45,9 +38,8 @@ public:
 		default:
 			break;
 		}
-		//
+		printf("生成一只 M_test\n");
 	}
-	//
 
 	void Move(const Player& player) {
 		Player t_player = player;
@@ -61,9 +53,7 @@ public:
 			position.x += x_real * speed;
 			position.y += y_real * speed;
 		}
-		//s
 	}
-	//
 
 	bool CheckPlayerCollision(const Player& player) {
 		POINT playerPosition = player.GetPosition();
@@ -74,7 +64,6 @@ public:
 		}
 		return  false;
 	}
-	//
 
 	bool CheckBulletCollision(const Bullet& bullet) {
 		POINT bulletPosition = bullet.GetPosition();
@@ -85,30 +74,18 @@ public:
 		}
 		return false;
 	}
-	//
 
-	void Hurt(void) {
-		life = 0;
-	}
-
-	bool CheckAlive(void) const {
-		return life > 0;
-	}
+	bool CheckAlive(void) const { return life > 0; }
 
 	void Drow() const {
-		printf("1");
 		setfillcolor(RED);
 		solidrectangle(position.x, position.y, position.x + M_Width, position.y + M_High);
 	}
-	//
 
 private:
 	_SIZE M_Width = 40;
 	_SIZE M_High = 50;
-	SPEED speed = 3;
-	LIFE life = 1;
-	POINT position = { 0,0 };
-	//
+	SPEED speed = 2;
 };
 
 void TryGenerateM_test(std::vector<M_test*>& M_test_list);

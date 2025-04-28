@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bullet.cpp" />
+    <ClCompile Include="common_def.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="m_test.cpp" />
   </ItemGroup>

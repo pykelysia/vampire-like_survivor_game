@@ -1,9 +1,6 @@
 #ifndef _BULLET_H_
 #define _BULLET_H_
 
-#include<graphics.h>
-#include<vector>
-
 #include "common_def.h"
 #include "player.h"
 
@@ -12,22 +9,21 @@ public:
 	Bullet() {}
 	~Bullet() {}
 
-	_SIZE GetRedius(void) const { return redius; }
-	DISTANCE GetOrbitalRedius() const { return orbitalRedius; }
-	//
-
 	POINT GetPosition(void) const { return position; }
 	void SetPosition(POINT newPosition) { position = newPosition; }
-	//
+
+	DISTANCE GetRepell(void) const { return repell; }
+	_SIZE GetRedius(void) const { return redius; }
+	DISTANCE GetOrbitalRedius() const { return orbitalRedius; }
 
 	void Draw() const {
 		circle(position.x, position.y, redius);
 	}
-	//
 
 private:
 	POINT position = { 0, 0 };
-	_SIZE redius = 40;
+	DISTANCE repell = 100;
+	_SIZE redius = 30;
 	DISTANCE orbitalRedius = 100;
 	//
 };

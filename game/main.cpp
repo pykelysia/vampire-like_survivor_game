@@ -1,7 +1,3 @@
-#include<graphics.h>
-#include<math.h>
-#include<vector>
-
 #include "common_def.h"
 #include "monster.h"
 #include "m_test.h"
@@ -10,10 +6,9 @@
 
 int main() {
 
-	//initgraph(WIDTH, HIGH, EX_SHOWCONSOLE);
-	initgraph(WIDTH, HIGH);
+	InitAll();
 
-	Player player = Player({ 640, 360 }, 100, 10, "tester");
+	Player player = Player({ WIDTH / 2, HIGH / 2 }, 10, 5);
 	std::vector<M_test*> M_test_list;
 	std::vector<Bullet*> bulletList;
 
@@ -55,25 +50,31 @@ int main() {
 		for (auto monster : M_test_list) {
 			monster->Drow();
 		}
+		//ºÏ≤‚≈ˆ◊≤
 		for (auto monster : M_test_list) {
 			if (monster->CheckPlayerCollision(player)) {
-				Sleep(1000);
-				return 0;
+				monster->Attack(&player);
+				if (!player.CheckAlive()) {
+					Sleep(1000);
+					return 0;
+				}
 			}
 		}
 		for (auto monster : M_test_list) {
 			for (auto bullet : bulletList) {
 				if (monster->CheckBulletCollision(*bullet)) {
-					monster->Hurt();
+					monster->Hurt(player, *bullet);
 				}
 			}
 		}
+		//—™¡øºı…Ÿ
 		for (int i = 0;i < M_test_list.size();i++) {
 			M_test* monster = M_test_list[i];
 			if (!monster->CheckAlive()) {
 				std::swap(M_test_list[i], M_test_list.back());
 				M_test_list.pop_back();
 				delete monster;
+				printf("“ª÷ª M_test À¿Õˆ\n");
 			}
 		}
 

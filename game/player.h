@@ -1,29 +1,24 @@
 #ifndef _PLAYER_H_
 #define _PLAYER_H_
 
-#include<graphics.h>
-
 #include "common_def.h"
 
 class Player {
 public:
-	Player(POINT t_position, int t_life, int t_attack, string t_name) :
+	Player(POINT t_position, int t_life, int t_attack) :
 		position(t_position),
 		life(t_life),
-		attack(t_attack),
-		name(t_name)
+		attack(t_attack)
 	{
 	};
 	virtual ~Player() {}
 
 	POINT GetPosition() const { return position; }
-	//
 
-	string GetName() const { return name; }
-	void SetName(string t_name) { name = t_name; }
-	//
+	void SetAttack(const ATTACK& newAttack) { attack = newAttack; }
+	ATTACK GetAttack(void) const { return attack; }
 
-	void ProcessEvent(ExMessage msg) {
+	void ProcessEvent(const ExMessage& msg) {
 
 		if (msg.message == WM_KEYDOWN) {
 			switch (msg.vkcode)
@@ -64,8 +59,6 @@ public:
 			}
 		}
 	}
-	//
-
 	void Move() {
 
 		int x_dir = is_move_right - is_move_left, y_dir = is_move_down - is_move_up;
@@ -77,20 +70,24 @@ public:
 			position.x += x_real * speed;
 			position.y += y_real * speed;
 		}
-		//
 
 		if (position.x + 50 >= WIDTH) position.x = WIDTH - 51;
 		if (position.y + 50 >= HIGH) position.y = HIGH - 51;
 		if (position.x - 50 <= 0) position.x = 50;
 		if (position.y - 50 <= 0) position.y = 50;
-		//
-
 	}
+
+	void Hurt(const ATTACK& monsterAttack) { 
+		SetLife(life - monsterAttack);
+		printf("受到一次伤害\n");
+	}
+	void SetLife(const LIFE& newlife) { life = newlife; }
+
+	bool CheckAlive() const { return life > 0; }
 
 	void Drow() const {
 		circle(position.x, position.y, PLAYERSIZE);
 	}
-	//
 
 private:
 	POINT position = { 0, 0 };
@@ -101,8 +98,6 @@ private:
 		is_move_left = false,
 		is_move_down = false,
 		is_move_right = false;
-	//
-	string name;
 };
 
 #endif // !_PLAYER_H_

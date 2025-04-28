@@ -24,6 +24,9 @@
     <ClCompile Include="m_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="common_def.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common_def.h">
