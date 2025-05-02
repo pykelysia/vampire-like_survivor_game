@@ -42,8 +42,7 @@ public:
 	}
 
 	void Move(const Player& player) {
-		Player t_player = player;
-		POINT playerPosition = t_player.GetPosition();
+		POINT playerPosition = player.GetPosition();
 		int x_dir = playerPosition.x - position.x;
 		int y_dir = playerPosition.y - position.y;
 		double vec_dir = sqrt(x_dir * x_dir + y_dir * y_dir);
@@ -85,7 +84,7 @@ public:
 private:
 	_SIZE M_Width = 40;
 	_SIZE M_High = 50;
-	SPEED speed = 2;
+	SPEED speed = 1;
 };
 
 void TryGenerateM_test(std::vector<M_test*>& M_test_list);

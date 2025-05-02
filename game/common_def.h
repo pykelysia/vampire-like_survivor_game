@@ -16,8 +16,9 @@ typedef int _SIZE;
 typedef int SPEED;
 typedef int LIFE;
 typedef int ATTACK;
-typedef int TIME;
+typedef DWORD TIME;
 typedef int DISTANCE;
+typedef int LEVAL;
 
 constexpr HIGH_INT HIGH = 720;
 constexpr WIDTH_INT WIDTH = 1280;

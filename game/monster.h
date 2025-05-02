@@ -13,6 +13,7 @@ public:
 	bool CheckBulletCollision() { return false; }
 	void Hurt(){}
 	bool CheckAlive() { return false; }
+	POINT GetPosition(void) const { return position; }
 	void Move(const Player& player) {}
 	void Attack(Player* player) {
 		TIME newAttackTime = GetTickCount();

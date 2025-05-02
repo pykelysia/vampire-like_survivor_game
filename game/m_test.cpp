@@ -1,5 +1,3 @@
-#include<vector>
-
 #include "m_test.h"
 
 const int INTERVAL = 100;

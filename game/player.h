@@ -18,6 +18,8 @@ public:
 	void SetAttack(const ATTACK& newAttack) { attack = newAttack; }
 	ATTACK GetAttack(void) const { return attack; }
 
+	DISTANCE GetTakeInRedius(void) const { return takeInRedius; }
+
 	void ProcessEvent(const ExMessage& msg) {
 
 		if (msg.message == WM_KEYDOWN) {
@@ -92,8 +94,10 @@ public:
 private:
 	POINT position = { 0, 0 };
 	SPEED speed = 5;
+	DISTANCE takeInRedius = 100;
 	LIFE life;
 	ATTACK attack;
+	LEVAL leval = 0;
 	bool is_move_up = false,
 		is_move_left = false,
 		is_move_down = false,

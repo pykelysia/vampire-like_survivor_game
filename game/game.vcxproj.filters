@@ -27,6 +27,9 @@
     <ClCompile Include="common_def.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="experience_ball.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common_def.h">
@@ -44,5 +47,11 @@
     <ClInclude Include="bullet.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="experience_ball.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
   </ItemGroup>
 </Project>
