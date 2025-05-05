@@ -132,7 +132,9 @@
     <ClCompile Include="common_def.cpp" />
     <ClCompile Include="experience_ball.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="monster.cpp" />
     <ClCompile Include="m_test.cpp" />
+    <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bullet.h" />

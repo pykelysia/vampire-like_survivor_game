@@ -30,6 +30,12 @@
     <ClCompile Include="experience_ball.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="monster.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common_def.h">

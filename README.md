@@ -24,3 +24,9 @@
 #### 2025/5/2
 
 增加了ExperienceBall类，并完成了生成与消失，下一次将完成与Player的交互。
+
+#### 2025/5/5
+
+添加了ExperienceBall与Player的交互。完成了所有类的重新封装。
+
+现拟定添加不同具体类对应的List类来实现main中对List的多次调用造成的main函数内的冗杂。

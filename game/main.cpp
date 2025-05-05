@@ -70,11 +70,6 @@ int main() {
 				}
 			}
 		}
-		for (auto experienceBall : experienceBallList) {
-			if (!experienceBall->isBeingTakeIn) {
-				experienceBall->CheckCollision(player);
-			}
-		}
 		//ÑªÁ¿¼õÉÙ
 		for (int i = 0;i < M_test_list.size();i++) {
 			M_test* monster = M_test_list[i];
@@ -88,9 +83,10 @@ int main() {
 		}
 		for (int i = 0;i < experienceBallList.size();i++) {
 			ExperienceBall* experienceBall = experienceBallList[i];
-			if (!experienceBall->CheckPlayerCollision(player)) {
+			if (experienceBall->CheckPlayerCollision(player)) {
 				std::swap(experienceBallList[i], experienceBallList.back());
 				experienceBallList.pop_back();
+				player.AddExperience(experienceBall->GetValue());
 				delete experienceBall;
 			}
 		}

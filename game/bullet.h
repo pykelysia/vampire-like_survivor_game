@@ -6,19 +6,17 @@
 
 class Bullet {
 public:
-	Bullet() {}
-	~Bullet() {}
+	Bullet();
+	virtual ~Bullet() {}
 
-	POINT GetPosition(void) const { return position; }
-	void SetPosition(POINT newPosition) { position = newPosition; }
+	POINT GetPosition(void) const;
+	void SetPosition(POINT newPosition);
 
-	DISTANCE GetRepell(void) const { return repell; }
-	_SIZE GetRedius(void) const { return redius; }
-	DISTANCE GetOrbitalRedius() const { return orbitalRedius; }
+	DISTANCE GetRepell(void) const;
+	_SIZE GetRedius(void) const;
+	DISTANCE GetOrbitalRedius() const;
 
-	void Draw() const {
-		circle(position.x, position.y, redius);
-	}
+	void Draw() const;
 
 private:
 	POINT position = { 0, 0 };

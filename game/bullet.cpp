@@ -6,9 +6,20 @@
 
 const int fullAngle = 360;
 
+Bullet::Bullet() {}
+
+POINT Bullet::GetPosition(void) const { return position; }
+void Bullet::SetPosition(POINT newPosition) { position = newPosition; }
+
+DISTANCE Bullet::GetRepell(void) const { return repell; }
+_SIZE Bullet::GetRedius(void) const { return redius; }
+DISTANCE Bullet::GetOrbitalRedius() const { return orbitalRedius; }
+
+void Bullet::Draw() const { circle(position.x, position.y, redius); }
+
 void UpdataBulletPosition(std::vector<Bullet*> bulletList, const Player& player) {
 	static int angle = 0;
-	int deltaAngle = 360 / (1.0 * bulletList.size());
+	int deltaAngle = int(360 / (1.0 * bulletList.size()));
 	POINT playerPosition = player.GetPosition();
 	//
 	angle = (angle + 5) % fullAngle;
