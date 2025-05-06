@@ -1,24 +1,20 @@
 #include "common_def.h"
-#include "monster.h"
-#include "m_test.h"
-#include "player.h"
-#include "bullet.h"
-#include "experience_ball.h"
+#include "character.h"
+#include "collision.h"
+#include "bulletlist.h"
+#include "exballlist.h"
+#include "m_testlist.h"
 
 int main() {
 
 	InitAll();
 
 	Player player = Player({ WIDTH / 2, HIGH / 2 }, 10, 5);
-	std::vector<M_test*> M_test_list;
-	std::vector<Bullet*> bulletList;
-	std::vector<ExperienceBall*> experienceBallList;
-	for (int i = 0; i < 3;i++) {
-		bulletList.push_back(new Bullet());
-	}
+	M_testList m_testList = M_testList();
+	BulletList bulletList = BulletList();
+	ExballList exballList = ExballList();
 	ExMessage msg;
 	BeginBatchDraw();
-	TIME allStartTime = GetTickCount();
 
 	while (true) {
 		TIME start_time = GetTickCount();
@@ -31,64 +27,28 @@ int main() {
 		//数据处理
 		//Player处理
 		player.Move();
-		UpdataBulletPosition(bulletList, player);
+		bulletList.UpdataBulletPosition(player);
 
 		//Monster处理
-		TryGenerateM_test(M_test_list);
-		for (auto monster : M_test_list) {
-			monster->Move(player);
-		}
+		m_testList.TryGenerateM_test();
+		m_testList.Move(player);
 
 		//绘图
 		setbkcolor(BLACK);
 		cleardevice();
 		player.Drow();
-		int counter = 0;
-		for (auto bullet : bulletList) {
-			bullet->Draw();
-		}
-		for (auto monster : M_test_list) {
-			monster->Drow();
-		}
-		for (auto experienceBall : experienceBallList) {
-			experienceBall->Draw();
-		}
+		bulletList.Draw();
+		m_testList.Draw();
+		exballList.Draw();
 		//检测碰撞
-		for (auto monster : M_test_list) {
-			if (monster->CheckPlayerCollision(player)) {
-				monster->Attack(&player);
-				if (!player.CheckAlive()) {
-					Sleep(1000);
-					return 0;
-				}
-			}
-		}
-		for (auto monster : M_test_list) {
-			for (auto bullet : bulletList) {
-				if (monster->CheckBulletCollision(*bullet)) {
-					monster->Hurt(player, *bullet);
-				}
-			}
-		}
+		m_testList.CheckCollision(M_testCollision(), player);
+		m_testList.CheckCollision(bulletList, player);
+		exballList.CheckAlive(player);
 		//血量减少
-		for (int i = 0;i < M_test_list.size();i++) {
-			M_test* monster = M_test_list[i];
-			if (!monster->CheckAlive()) {
-				TryGenerateExperienceBall(experienceBallList, GetTickCount() - allStartTime, monster->GetPosition());
-				std::swap(M_test_list[i], M_test_list.back());
-				M_test_list.pop_back();
-				delete monster;
-				printf("一只 M_test 死亡\n");
-			}
-		}
-		for (int i = 0;i < experienceBallList.size();i++) {
-			ExperienceBall* experienceBall = experienceBallList[i];
-			if (experienceBall->CheckPlayerCollision(player)) {
-				std::swap(experienceBallList[i], experienceBallList.back());
-				experienceBallList.pop_back();
-				player.AddExperience(experienceBall->GetValue());
-				delete experienceBall;
-			}
+		m_testList.CheckAlive(exballList);
+		if (!player.CheckAlive()) {
+			Sleep(1000);
+			return 0;
 		}
 
 		FlushBatchDraw();

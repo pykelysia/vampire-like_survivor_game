@@ -1,6 +1,5 @@
 #include "monster.h"
 
-
 POINT Monster::GetPosition(void) const { return position; };
 
 void Monster::Attack(Player* player) {

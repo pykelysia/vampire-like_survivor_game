@@ -2,6 +2,7 @@
 #define _PLAYER_H_
 
 #include "common_def.h"
+#include "character.h"
 
 constexpr LEVAL BASELEVALGAP = 10;
 
@@ -29,6 +30,7 @@ public:
 	void SetExperience(LEVAL newExperience);
 	void LevalUp(void);
 	void SetLeval(LEVAL newLaval);
+	//等级处理
 	void Drow() const;
 
 private:

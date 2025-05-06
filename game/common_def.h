@@ -27,6 +27,8 @@ constexpr double pi = 3.1415926;
 constexpr _SIZE PLAYERSIZE = 50;
 constexpr TIME ATTACK_CD_TIME = 100;
 
+static TIME allStartTime = GetTickCount();
+
 void InitAll(void);
 
 #endif // !_COMMON_DEF_H_

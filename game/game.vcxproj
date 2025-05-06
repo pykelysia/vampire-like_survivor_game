@@ -129,19 +129,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bullet.cpp" />
+    <ClCompile Include="bulletlist.cpp" />
+    <ClCompile Include="character.cpp" />
+    <ClCompile Include="collision.cpp" />
     <ClCompile Include="common_def.cpp" />
+    <ClCompile Include="exballlist.cpp" />
     <ClCompile Include="experience_ball.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="monster.cpp" />
     <ClCompile Include="m_test.cpp" />
+    <ClCompile Include="m_testlist.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bullet.h" />
+    <ClInclude Include="bulletlist.h" />
+    <ClInclude Include="character.h" />
+    <ClInclude Include="collision.h" />
     <ClInclude Include="common_def.h" />
+    <ClInclude Include="exballlist.h" />
     <ClInclude Include="experience_ball.h" />
     <ClInclude Include="monster.h" />
     <ClInclude Include="m_test.h" />
+    <ClInclude Include="m_testlist.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>
   <ItemGroup>

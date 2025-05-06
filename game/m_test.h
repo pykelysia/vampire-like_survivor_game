@@ -4,25 +4,22 @@
 #include "common_def.h"
 #include "monster.h"
 #include "player.h"
-#include "bullet.h"
 
-class M_test :public Monster {
+class Player;
+
+class M_test : public Monster {
 public:
 	M_test(int life, int attack);
+	_SIZE GetWidth(void) const;
+	_SIZE GetHigh(void) const;
 
 	void Move(const Player& player);
 
-	bool CheckPlayerCollision(const Player& player);
-
-	bool CheckBulletCollision(const Bullet& bullet);
-
-	void Drow() const;
+	void Draw() const;
 
 private:
 	_SIZE M_Width = 40;
 	_SIZE M_High = 50;
-	SPEED speed = 2;
+	SPEED speed = 3;
 };
-
-void TryGenerateM_test(std::vector<M_test*>& M_test_list);
 #endif // !_M_TEST_H_

@@ -35,6 +35,10 @@ M_test::M_test(int life, int attack) : Monster(life, attack) {
 	printf("生成一只 M_test\n");
 }
 
+_SIZE M_test::GetWidth(void) const { return M_Width; }
+
+_SIZE M_test::GetHigh(void) const { return M_High; }
+
 void M_test::Move(const Player& player) {
 	POINT playerPosition = player.GetPosition();
 	int x_dir = playerPosition.x - position.x;
@@ -48,35 +52,7 @@ void M_test::Move(const Player& player) {
 	}
 }
 
-bool M_test::CheckPlayerCollision(const Player& player) {
-	POINT playerPosition = player.GetPosition();
-	POINT checkPosition = { position.x + M_Width / 2 - playerPosition.x, position.y + M_High / 2 - playerPosition.y };
-	int distance = int(sqrt(checkPosition.x * checkPosition.x + checkPosition.y * checkPosition.y));
-	if (distance <= PLAYERSIZE) {
-		return true;
-	}
-	return  false;
-}
-
-bool M_test::CheckBulletCollision(const Bullet& bullet) {
-	POINT bulletPosition = bullet.GetPosition();
-	POINT checkPosition = { position.x + M_Width / 2 - bulletPosition.x, position.y + M_High / 2 - bulletPosition.y };
-	int distance = int(sqrt(checkPosition.x * checkPosition.x + checkPosition.y * checkPosition.y));
-	if (distance <= bullet.GetRedius()) {
-		return true;
-	}
-	return false;
-}
-
-void M_test::Drow() const {
+void M_test::Draw() const {
 	setfillcolor(RED);
 	solidrectangle(position.x, position.y, position.x + M_Width, position.y + M_High);
-}
-
-void TryGenerateM_test(std::vector<M_test*>& M_test_list) {
-	static int counter = 0;
-	if ((++counter) % INTERVAL == 0) {
-		counter = 0;
-		M_test_list.push_back(new M_test(10, 1));
-	}
 }

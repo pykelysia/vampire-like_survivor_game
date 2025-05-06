@@ -2,10 +2,14 @@
 #define _MONSTER_H_
 
 #include "common_def.h"
+#include "character.h"
 #include "player.h"
 #include "bullet.h"
 
-class Monster {
+class Player;
+class Bullet;
+
+class Monster : public Character {
 public:
 	Monster(int t_life, int t_attack) : life(t_life), attack(t_attack) {}
 	virtual ~Monster() {}

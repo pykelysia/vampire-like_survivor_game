@@ -2,7 +2,7 @@
 #define _BULLET_H_
 
 #include "common_def.h"
-#include "player.h"
+#include "character.h"
 
 class Bullet {
 public:
@@ -15,17 +15,17 @@ public:
 	DISTANCE GetRepell(void) const;
 	_SIZE GetRedius(void) const;
 	DISTANCE GetOrbitalRedius() const;
+	ATTACK GatAttack(void) const;
 
 	void Draw() const;
 
 private:
 	POINT position = { 0, 0 };
+	ATTACK attack = 1;
 	DISTANCE repell = 100;
 	_SIZE redius = 30;
 	DISTANCE orbitalRedius = 100;
 	//
 };
-
-void UpdataBulletPosition(std::vector<Bullet*> bulletList, const Player& player);
 
 #endif // !_BULLET_H_

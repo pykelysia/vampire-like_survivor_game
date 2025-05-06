@@ -2,7 +2,7 @@
 #define _EXPERIENCE_BALL_H_
 
 #include "common_def.h"
-#include "player.h"
+#include "character.h"
 
 
 typedef int VALUE;
@@ -13,8 +13,7 @@ public:
 	virtual ~ExperienceBall(){}
 
 	VALUE GetValue(void) const;
-
-	bool CheckPlayerCollision(const Player& player) const;
+	POINT GetPosition(void) const;
 
 	void Draw(void) const;
 
@@ -22,7 +21,5 @@ private:
 	VALUE value;
 	POINT position;
 };
-void TryGenerateExperienceBall(std::vector<ExperienceBall*>& experienceBallList, TIME nowTime, POINT position);
-
 
 #endif // !_EXPERIENCE_BALL_H_

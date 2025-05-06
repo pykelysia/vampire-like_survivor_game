@@ -13,48 +13,120 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\collision">
+      <UniqueIdentifier>{b57125eb-c29b-4552-b21b-679130c46c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\character">
+      <UniqueIdentifier>{b14e657f-79be-4efb-b4b2-3b76740db802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\character\bullet">
+      <UniqueIdentifier>{bccaeac6-eda6-414b-914c-8e27e31bb958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\character\monster">
+      <UniqueIdentifier>{fc9c3dff-27b0-44d4-89e8-9213b3d4dde4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\character\monster\m_test">
+      <UniqueIdentifier>{402d2227-3eb8-4ad9-af86-9c3abaec6c38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\character\player">
+      <UniqueIdentifier>{ff5298fa-3b6d-43a0-960b-38f2dbb9fcba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\character\exball">
+      <UniqueIdentifier>{0964243b-a6b6-446e-b0c7-1b03e066bf86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\character">
+      <UniqueIdentifier>{a0795ad8-f787-4a9b-937c-435a2c040195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\character\bullet">
+      <UniqueIdentifier>{cd5e0db5-8ba5-4b3f-8b15-69876c683dfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\character\monster">
+      <UniqueIdentifier>{d24f3d9a-f198-40ae-ac37-d9589db00206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\character\monster\m_test">
+      <UniqueIdentifier>{d2824ced-8beb-4c80-aa12-29b185674449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\character\player">
+      <UniqueIdentifier>{2cc82657-7a84-40e3-94b6-86b4c3e429c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\character\exball">
+      <UniqueIdentifier>{921373e0-4dfd-410c-9b12-269be9494cf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\collision">
+      <UniqueIdentifier>{1a016be7-a899-4d21-9f61-ec1888de7fe0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="bullet.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="m_test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="common_def.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="experience_ball.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="monster.cpp">
+      <Filter>源文件\character\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>源文件\character\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="m_test.cpp">
+      <Filter>源文件\character\monster\m_test</Filter>
+    </ClCompile>
+    <ClCompile Include="m_testlist.cpp">
+      <Filter>源文件\character\monster\m_test</Filter>
+    </ClCompile>
+    <ClCompile Include="bulletlist.cpp">
+      <Filter>源文件\character\bullet</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\character\player</Filter>
     </ClCompile>
-    <ClCompile Include="monster.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="character.cpp">
+      <Filter>源文件\character</Filter>
+    </ClCompile>
+    <ClCompile Include="exballlist.cpp">
+      <Filter>源文件\character\exball</Filter>
+    </ClCompile>
+    <ClCompile Include="experience_ball.cpp">
+      <Filter>源文件\character\exball</Filter>
+    </ClCompile>
+    <ClCompile Include="collision.cpp">
+      <Filter>源文件\collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common_def.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="monster.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="bullet.h">
+      <Filter>头文件\character\bullet</Filter>
     </ClInclude>
-    <ClInclude Include="m_test.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="bulletlist.h">
+      <Filter>头文件\character\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>头文件\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="character.h">
+      <Filter>头文件\character</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\character\player</Filter>
     </ClInclude>
-    <ClInclude Include="bullet.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="exballlist.h">
+      <Filter>头文件\character\exball</Filter>
     </ClInclude>
     <ClInclude Include="experience_ball.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\character\exball</Filter>
+    </ClInclude>
+    <ClInclude Include="m_test.h">
+      <Filter>头文件\character\monster\m_test</Filter>
+    </ClInclude>
+    <ClInclude Include="m_testlist.h">
+      <Filter>头文件\character\monster\m_test</Filter>
+    </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>头文件\character\monster</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
