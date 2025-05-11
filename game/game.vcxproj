@@ -140,6 +140,7 @@
     <ClCompile Include="m_test.cpp" />
     <ClCompile Include="m_testlist.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="scenior.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bullet.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="m_test.h" />
     <ClInclude Include="m_testlist.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="scenior.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

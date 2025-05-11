@@ -30,6 +30,8 @@ public:
 	void SetExperience(LEVAL newExperience);
 	void LevalUp(void);
 	void SetLeval(LEVAL newLaval);
+	double GetLevalPercent(void) const;
+	LEVAL GetLeval(void) const;
 	//等级处理
 	void Drow() const;
 

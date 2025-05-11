@@ -92,6 +92,8 @@ void Player::CheckLeval() {
 void Player::SetExperience(LEVAL newExperience) { experience = newExperience; }
 void Player::LevalUp(void) { leval++; }
 void Player::SetLeval(LEVAL newLaval) { leval = newLaval; }
+double Player::GetLevalPercent(void) const { return (1.0 * experience) / (BASELEVALGAP * (1 << leval)); }
+LEVAL Player::GetLeval(void) const { return leval; }
 
 void Player::Drow() const {
 	circle(position.x, position.y, PLAYERSIZE);

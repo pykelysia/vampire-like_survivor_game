@@ -30,7 +30,7 @@ void ExballList::CheckAlive(Player& player){
 	for (int i = 0;i < list.size();i++) {
 		ExperienceBall* experienceBall = list[i];
 		if (exballCollision.CheckCollision(experienceBall, player)) {
-			printf("检测到经验球与玩家碰撞");
+			printf("检测到经验球与玩家碰撞\n");
 			std::swap(list[i], list.back());
 			list.pop_back();
 			player.AddExperience(experienceBall->GetValue());

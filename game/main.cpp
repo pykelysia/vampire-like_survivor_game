@@ -4,6 +4,7 @@
 #include "bulletlist.h"
 #include "exballlist.h"
 #include "m_testlist.h"
+#include "scenior.h"
 
 int main() {
 
@@ -13,6 +14,7 @@ int main() {
 	M_testList m_testList = M_testList();
 	BulletList bulletList = BulletList();
 	ExballList exballList = ExballList();
+	Scenior scenior = Scenior();
 	ExMessage msg;
 	BeginBatchDraw();
 
@@ -40,6 +42,7 @@ int main() {
 		bulletList.Draw();
 		m_testList.Draw();
 		exballList.Draw();
+		scenior.Draw(player);
 		//¼ì²âÅö×²
 		m_testList.CheckCollision(M_testCollision(), player);
 		m_testList.CheckCollision(bulletList, player);
